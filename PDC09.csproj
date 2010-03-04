@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="3.5">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">iPhoneSimulator</Platform>
+    <ProductVersion>9.0.21022</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{EFAEF3CA-CBCF-49E2-A52A-069372D79667}</ProjectGuid>
+    <ProjectTypeGuids>{E613F3A2-FE9C-494F-B74E-F63BCB86FEA6};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <OutputType>Exe</OutputType>
+    <RootNamespace>Monospace2</RootNamespace>
+    <AssemblyName>Monospace2</AssemblyName>
+    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+    <BundleIdentifier>net.conceptdevelopment.pdc09</BundleIdentifier>
+    <BundleDisplayName>PDC09</BundleDisplayName>
+    <BundleIcon>icon.png</BundleIcon>
+    <MtouchSdkVersion>3.0</MtouchSdkVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|iPhoneSimulator' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\iPhoneSimulator\Debug</OutputPath>
+    <DefineConstants>DEBUG</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <MtouchLink>None</MtouchLink>
+    <MtouchDebug>True</MtouchDebug>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|iPhoneSimulator' ">
+    <DebugType>none</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\iPhoneSimulator\Release</OutputPath>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <MtouchDebug>False</MtouchDebug>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|iPhone' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\iPhone\Debug</OutputPath>
+    <DefineConstants>DEBUG</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <CodesignKey>iPhone Developer</CodesignKey>
+    <MtouchDebug>True</MtouchDebug>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|iPhone' ">
+    <DebugType>none</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\iPhone\Release</OutputPath>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <CodesignKey>iPhone Developer</CodesignKey>
+    <MtouchDebug>False</MtouchDebug>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Core" />
+    <Reference Include="monotouch" />
+    <Reference Include="System.Xml.Linq" />
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <ProjectExtensions>
+    <MonoDevelop>
+      <Properties InternalTargetFrameworkVersion="IPhone" />
+    </MonoDevelop>
+  </ProjectExtensions>
+  <ItemGroup>
+    <Compile Include="Main.cs" />
+    <Compile Include="AppDelegate.cs" />
+    <Compile Include="TabBarController.cs" />
+    <Compile Include="DaysViewController.cs" />
+    <Compile Include="SpeakersViewController.cs" />
+    <Compile Include="BlogViewController.cs" />
+    <Compile Include="TwitterViewController.cs" />
+    <Compile Include="BlogReader\AtomRepository.cs" />
+    <Compile Include="BlogReader\AtomEntry.cs" />
+    <Compile Include="BlogEntryViewController.cs" />
+    <Compile Include="TwitterReader\TwitterRepository.cs" />
+    <Compile Include="TwitterReader\Tweet.cs" />
+    <Compile Include="SessionDatabase\SQLite.cs" />
+    <Compile Include="SessionDatabase\Database.cs" />
+    <Compile Include="SpeakerBioViewController.cs" />
+    <Compile Include="SessionsViewController.cs" />
+    <Compile Include="SessionViewController.cs" />
+    <Compile Include="SessionCellController.xib.designer.cs">
+      <DependentUpon>SessionCellController.xib</DependentUpon>
+    </Compile>
+    <Compile Include="SessionCellController.xib.cs">
+      <DependentUpon>SessionCellController.xib</DependentUpon>
+    </Compile>
+    <Compile Include="MapViewController.cs" />
+    <Compile Include="SponsorsViewController.cs" />
+    <Compile Include="MapHelper.cs" />
+    <Compile Include="MapFlipViewController.cs" />
+    <Compile Include="MapLocationViewController.cs" />
+    <Compile Include="BlogReader\RSSRepository.cs" />
+    <Compile Include="BlogReader\RSSEntry.cs" />
+    <Compile Include="RssSessionsViewController.cs" />
+    <Compile Include="RssSessionsEntryViewController.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="BlogReader\" />
+    <Folder Include="TwitterReader\" />
+    <Folder Include="SessionDatabase\" />
+    <Folder Include="Sponsors\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="icon.png" />
+    <None Include="Info.plist" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Conference.db" />
+    <Content Include="BackgroundMonospace.png" />
+    <Content Include="Default.png" />
+    <Content Include="tabtwitter.png" />
+    <Content Include="tabblogger.png" />
+    <Content Include="tabsession.png" />
+    <Content Include="tabmap.png" />
+    <Content Include="tabsponsor.png" />
+    <Content Include="tabspeaker.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Sponsors\Sponsors.htm">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Page Include="SessionCellController.xib" />
+  </ItemGroup>
+</Project>
